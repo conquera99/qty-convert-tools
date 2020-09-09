@@ -1,3 +1,14 @@
+/**
+ * Convert Qty
+ * will convert given data with qty to readable quantity with given options
+ * 
+ * @param row Object
+ * @param space boolean
+ * @param uom boolean, will ignore ```space``` arguments
+ * @param prefix String
+ * 
+ * @returns String
+ */
 function convertQty(row, space = true, uom = false, prefix = 'transfer') {
     const conversion = parseInt(row[`${prefix}_product_conversion`], 10);
     const rawQty = parseInt(row[`${prefix}_qty`], 10);
@@ -19,6 +30,15 @@ function convertQty(row, space = true, uom = false, prefix = 'transfer') {
     return `${minus}${qtyLvl1}.${qtyLvl2}`;
 }
 
+/**
+ * Convert to Unit Qty
+ * will convert from readable qty to unit qty with given ```conv``` arguments as qty conversion
+ * 
+ * @param qty String
+ * @param conv Number
+ * 
+ * @returns Number
+ */
 function convertToUnitQty(qty, conv) {
     const minus = qty.toString().startsWith('-') ? -1 : 1;
     const qtyDetail = qty.toString().replace('-', '').split('.');
