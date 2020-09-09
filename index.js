@@ -9,14 +9,14 @@
  * 
  * @returns String
  */
-function convertQty(row, space = true, uom = false, prefix = 'transfer') {
-    const conversion = parseInt(row[`${prefix}_product_conversion`], 10);
-    const rawQty = parseInt(row[`${prefix}_qty`], 10);
+function convertQty(row, space = true, uom = false, prefix = 'transfer_') {
+    const conversion = parseInt(row[`${prefix}product_conversion`], 10);
+    const rawQty = parseInt(row[`${prefix}qty`] || row.product_stock, 10);
     const qty = Math.abs(rawQty);
     const qtyLvl1 = parseInt(qty / conversion, 10);
     const qtyLvl2 = qty % conversion;
-    const uom1 = row[`${prefix}_product_uom1`];
-    const uom2 = row[`${prefix}_product_uom2`];
+    const uom1 = row[`${prefix}product_uom1`];
+    const uom2 = row[`${prefix}product_uom2`];
     const minus = rawQty < 0 ? '-' : '';
 
     if (uom) {

@@ -1,6 +1,6 @@
 {
   "name": "@conquera99/qty-convert-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "tools to help conversion for 2 level of uom",
   "main": "index.js",
   "scripts": {
