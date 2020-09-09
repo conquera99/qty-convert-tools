@@ -7,6 +7,7 @@
     "start": "node example.js",
     "test": "jest"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/conquera99/qty-convert-tools.git"
