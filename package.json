@@ -1,7 +1,7 @@
 {
   "name": "qty-convert-tools",
   "version": "1.0.0",
-  "description": "tools to help 4 level of uom convertion",
+  "description": "tools to help conversion for 2 level of uom",
   "main": "index.js",
   "scripts": {
     "start": "node example.js",
